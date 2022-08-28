@@ -31,7 +31,7 @@ module.exports = (sequelize) => {
             validate: {
               notNull: {msg: 'A password is required'},
               notEmpty: {msg: 'password field cannot be blanck'},
-              len: {args:[8,20], msg: 'your password must be between 8 and 20 characters in length'}
+            //   len: {args:[8,20], msg: 'your password must be between 8 and 20 characters in length'}
             }
         }
     }, { sequelize });

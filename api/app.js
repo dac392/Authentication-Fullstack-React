@@ -3,7 +3,7 @@
 const cors = require('cors');
 const express = require('express');
 const morgan = require('morgan');
-const routes = require('/routes');
+const routes = require('./routes');
 const { sequelize } = require('./models');
 
 const app = express();

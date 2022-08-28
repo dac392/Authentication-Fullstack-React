@@ -2,19 +2,16 @@
   "development": {
     "database": "user.db",
     "storage": "user.db",
-    "dialect": "sqlite",
-    "logging": false
+    "dialect": "sqlite"
   },
   "test": {
     "database": "user.db",
     "storage": "user.db",
-    "dialect": "sqlite",
-    "logging": false
+    "dialect": "sqlite"
   },
   "production": {
     "database": "user.db",
     "storage": "user.db",
-    "dialect": "sqlite",
-    "logging": false
+    "dialect": "sqlite"
   }
 }
