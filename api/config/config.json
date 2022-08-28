@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "users",
+    "storage": "users.db",
+    "define": {"timestamps": false},
+    "dialect": "sqlite"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "users",
+    "storage": "users.db",
+    "define": {"timestamps": false},
+    "dialect": "sqlite"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "users",
+    "storage": "users.db",
+    "define": {"timestamps": false},
+    "dialect": "sqlite"
+  }
+}
