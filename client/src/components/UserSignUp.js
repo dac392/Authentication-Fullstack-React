@@ -40,7 +40,7 @@ const UserSignUp = ()=>{
           ) }
         />
         <p>
-          Already have a user account? <Link to="/signin">Click here</Link> to sign in!
+          Already have a user account? <Link to="/login">Click here</Link> to sign in!
         </p>
       </div>
     </div>
