@@ -13,12 +13,12 @@ const UserSignUp = ()=>{
   const onUsernameChange = (e)=> setUsername(e.target.value);
   const onPasswordChange = (e)=> setPassword(e.target.value);
 
-  const submit = () => {
+  const submit = (e) => {
     e.preventDefault();
     const val = { name, username, password }; // something like this i think
   }
   
-  const cancel = () => {
+  const cancel = (e) => {
     e.preventDefault();
   }
 
