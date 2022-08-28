@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useContext, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Context } from '../Context';
 import Form from './Form';
 import SignUp from './SignUp';
 
 const UserSignUp = ()=>{
 
+  const navigate = useNavigate();
+
+  const { data } = useContext(Context);
+  const [flag, setFlag] = useState(100);
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -13,13 +18,33 @@ const UserSignUp = ()=>{
   const onUsernameChange = (e)=> setUsername(e.target.value);
   const onPasswordChange = (e)=> setPassword(e.target.value);
 
-  const submit = (e) => {
-    e.preventDefault();
-    const val = { name, username, password }; // something like this i think
+  useEffect(()=>{
+    console.log(`Abort flag: ${flag}`);
+    if(flag === 300){
+      navigate('/');
+    }else if(flag === 400){
+      navigate('/error')
+    }
+  }, [flag]);
+
+  const submit = () => {
+    const user = { name, username, password }; // something like this i think
+    data.createUser(user)
+      .then( errors => {
+        if(errors.length) {
+          setErrors( { errors } );
+        } else {
+          console.log(`${username} is successfully signed up and authenticated!`);
+        } 
+      })
+      .catch( err => {
+        console.log(err);
+        setFlag(400)
+      });
   }
   
-  const cancel = (e) => {
-    e.preventDefault();
+  const cancel = () => {
+    setFlag(300)
   }
 
   return (
