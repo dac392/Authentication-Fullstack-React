@@ -21,9 +21,9 @@ export default () => (
       <Switch>
         <Route exact path="/" component={Public} />
         <Route path="/authenticated" component={Authenticated} />
-        <Route path="/signin" component={UserSignIn} />
+        <Route path="/login" component={UserLogIn} />
         <Route path="/signup" component={UserSignUp} />
-        <Route path="/signout" component={UserSignOut} />
+        <Route path="/logout" component={UserLogOut} />
         <Route component={NotFound} />
       </Switch>
     </div>
