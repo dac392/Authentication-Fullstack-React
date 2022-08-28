@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Form from './Form';
+import SignUp from './SignUp';
 
-const UserLogIn = ()=>{
+const UserSignUp = ()=>{
 
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
@@ -24,14 +25,14 @@ const UserLogIn = ()=>{
   return (
     <div className='bounds'>
       <div className='grid-33 centered signin'>
-        <h1>Sign up</h1>
+        <h1>Sign Up</h1>
         <Form 
           cancel={cancel}
           errors={errors}
           submit={submit}
           submitButtonText={"Sign Up"}
           elements={ () => ( 
-            <LogIn 
+            <SignUp 
               onNameChange={onNameChange}
               onUsernameChange={onUsernameChange}
               onPasswordChange={onPasswordChange}
@@ -46,4 +47,4 @@ const UserLogIn = ()=>{
   );
 }
 
-export default UserLogIn;
+export default UserSignUp;

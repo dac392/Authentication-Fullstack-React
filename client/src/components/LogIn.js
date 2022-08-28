@@ -1,14 +1,8 @@
 import React from "react";
 
-const LogIn = ({onNameChange, onPasswordChange, onUsernameChange})=>{
+const LogIn = ({ onPasswordChange, onUsernameChange })=>{
     return (
         <>
-            <input type="text"
-                id="name" 
-                name="name" 
-                onChange={onNameChange} 
-                placeholder="Name" 
-            />
             <input type="text"
                 id="username" 
                 name="username" 
