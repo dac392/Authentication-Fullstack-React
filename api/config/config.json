@@ -1,26 +1,20 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "users",
-    "storage": "users.db",
-    "define": {"timestamps": false},
-    "dialect": "sqlite"
+    "database": "user.db",
+    "storage": "user.db",
+    "dialect": "sqlite",
+    "logging": false
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "users",
-    "storage": "users.db",
-    "define": {"timestamps": false},
-    "dialect": "sqlite"
+    "database": "user.db",
+    "storage": "user.db",
+    "dialect": "sqlite",
+    "logging": false
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "users",
-    "storage": "users.db",
-    "define": {"timestamps": false},
-    "dialect": "sqlite"
+    "database": "user.db",
+    "storage": "user.db",
+    "dialect": "sqlite",
+    "logging": false
   }
 }
