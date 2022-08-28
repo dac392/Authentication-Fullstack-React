@@ -9,8 +9,8 @@ import Header from './components/Header';
 import Public from './components/Public';
 import NotFound from './components/NotFound';
 import UserSignUp from './components/UserSignUp';
-import UserSignIn from './components/UserSignIn';
-import UserSignOut from './components/UserSignOut';
+import UserLogIn from './components/UserLogIn';
+import UserLogOut from './components/UserLogOut';
 import Authenticated from './components/Authenticated';
 
 export default () => (
