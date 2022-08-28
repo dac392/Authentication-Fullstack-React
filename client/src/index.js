@@ -6,9 +6,13 @@ import './styles/new.css';
 
 import { Provider } from './Context';
 import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <Provider>
-    <App />
-  </Provider>,
-  document.getElementById('root'));
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
+);

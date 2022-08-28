@@ -1,8 +1,7 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  Routes,
   Route,
-  Switch
 } from 'react-router-dom';
 
 import Header from './components/Header';
@@ -14,18 +13,17 @@ import UserLogOut from './components/UserLogOut';
 import Authenticated from './components/Authenticated';
 
 export default () => (
-  <Router>
-    <div>
-      <Header />
 
-      <Switch>
-        <Route exact path="/" component={Public} />
-        <Route path="/authenticated" component={Authenticated} />
-        <Route path="/login" component={UserLogIn} />
-        <Route path="/signup" component={UserSignUp} />
-        <Route path="/logout" component={UserLogOut} />
-        <Route component={NotFound} />
-      </Switch>
-    </div>
-  </Router>
+  <div>
+    <Header />
+    <Routes>
+      <Route exact path="/" element={ <Public /> } />
+      <Route path="/authenticated" element={ <Authenticated /> } />
+      <Route path="/login" element={ <UserLogIn /> } />
+      <Route path="/logout" element={ <UserLogOut /> } />
+      <Route path="/signup" element={ <UserSignUp /> } />
+      <Route path="*" element={ <NotFound /> } />
+    </Routes>
+  </div>
+
 );
