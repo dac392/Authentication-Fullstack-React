@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Context } from '../Context';
 import Form from './Form';
@@ -14,6 +14,7 @@ const FAILURE = 400;
 const UserLogIn = ()=>{
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const { actions } = useContext(Context);
   const [flag, setFlag] = useState(NEUTRAL);
@@ -22,12 +23,16 @@ const UserLogIn = ()=>{
   const [errors, setErrors] = useState([]);
   const onUsernameChange = (e)=> setUsername(e.target.value);
   const onPasswordChange = (e)=> setPassword(e.target.value);
-
+  
   useEffect(()=>{
     if(flag === SUCCESS){
-      navigate('/authenticated');
+      if(location.state && location.state.from){
+        navigate(location.state.from);
+      }else{
+        navigate('/authenticated');
+      }
     } else if(flag === REDIRECT){
-      navigate('/')
+      navigate('/');
     }else if(flag === FAILURE){
       navigate('/error');
     }

@@ -24,3 +24,16 @@
     color: #7c689b;
     padding: 15px 0 40px 10px;
   }
+
+  ul::before{
+    content: attr(data-header);
+    font-size: 1.5em;
+    /* font-weight: bold; */
+    font-family: 'Courier New', Courier, monospace;
+    color: #7c689b;
+  }
+
+  .profile li{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0.5em 1.5em ;
+  }

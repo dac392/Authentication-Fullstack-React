@@ -12,6 +12,7 @@ import UserSignUp from './components/UserSignUp';
 import UserLogIn from './components/UserLogIn';
 import UserLogOut from './components/UserLogOut';
 import Authenticated from './components/Authenticated';
+import Profile from './components/Profile';
 
 export default () => (
 
@@ -19,8 +20,9 @@ export default () => (
     <Header />
     <Routes>
       <Route exact path="/" element={ <Public /> } />
-      <Route path="/authenticated" element={ <PrivateRoute /> }>
-        <Route index element={<Authenticated />} />
+      <Route element={ <PrivateRoute /> }>
+        <Route path="/authenticated" element={<Authenticated />} />
+        <Route path="/profile" element={<Profile />} />
       </Route>
       <Route path="/login" element={ <UserLogIn /> } />
       <Route path="/logout" element={ <UserLogOut /> } />
