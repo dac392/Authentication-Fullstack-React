@@ -6,6 +6,7 @@ import {
 
 import Header from './components/Header';
 import Public from './components/Public';
+import PrivateRoute from './PrivateRoute';
 import NotFound from './components/NotFound';
 import UserSignUp from './components/UserSignUp';
 import UserLogIn from './components/UserLogIn';
@@ -18,7 +19,9 @@ export default () => (
     <Header />
     <Routes>
       <Route exact path="/" element={ <Public /> } />
-      <Route path="/authenticated" element={ <Authenticated /> } />
+      <Route path="/authenticated" element={ <PrivateRoute /> }>
+        <Route element={<Authenticated />} />
+      </Route>
       <Route path="/login" element={ <UserLogIn /> } />
       <Route path="/logout" element={ <UserLogOut /> } />
       <Route path="/signup" element={ <UserSignUp /> } />

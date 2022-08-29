@@ -1,11 +1,10 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Navigate, Outlet } from 'react-router-dom';
 import { Context } from './Context';
 
-export default ({ component: Component, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-    />
-  );
-};
+export default ()=>{
+  const { authUser } = useContext(Context);
+  return authUser? <Outlet /> : <Navigate to='/login' />;
+}
+
+// export default PrivateRoute;
