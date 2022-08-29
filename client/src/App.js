@@ -20,7 +20,7 @@ export default () => (
     <Routes>
       <Route exact path="/" element={ <Public /> } />
       <Route path="/authenticated" element={ <PrivateRoute /> }>
-        <Route element={<Authenticated />} />
+        <Route index element={<Authenticated />} />
       </Route>
       <Route path="/login" element={ <UserLogIn /> } />
       <Route path="/logout" element={ <UserLogOut /> } />
