@@ -1,7 +1,10 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Navigate } from 'react-router-dom';
+import { Context } from '../Context';
 
 export default () => {
-  const navigate = useNavigate();
-  useEffect( navigate("/"), [] );
+  const { actions } = useContext(Context);
+  actions.logOut();
+
+  return (<Navigate to="/" />);
 }

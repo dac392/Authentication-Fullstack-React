@@ -14,7 +14,9 @@ export const Provider = (props) => {
     }
     return user;
   };
-  const logOut = () => {};
+  const logOut = () => {
+    setAuthUser(null);
+  };
   const signup = () => {};
 
   return (
