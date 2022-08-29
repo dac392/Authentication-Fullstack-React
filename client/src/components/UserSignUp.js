@@ -8,7 +8,7 @@ const UserSignUp = ()=>{
 
   const navigate = useNavigate();
 
-  const { data } = useContext(Context);
+  const { data, actions } = useContext(Context);
   const [flag, setFlag] = useState(100);
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
@@ -34,6 +34,12 @@ const UserSignUp = ()=>{
         if(errors.length) {
           setErrors( { errors } );
         } else {
+          actions.logIn(username, password)
+            .then(()=>navigate('/authenticated'))
+            .catch( err => {
+              console.log(err);
+              setFlag(400)
+            });
           console.log(`${username} is successfully signed up and authenticated!`);
         } 
       })
