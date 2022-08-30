@@ -56,21 +56,21 @@ The API routes:
 
 The client itself is not meant to be impresive as much as it is focused on functionality and usablity. Maintains context for the application within client/src/Context.js to prevent propdrilling and aid readability. Additionally utilizes react and react-router-dom hook to access and maintain state, actions, and context.
 
-The app's available routes:
+The app's available routes accessed using **_localhost:3000_** :-
 
-- **localhost:3000/** : welcome page
-- **localhost:3000/signup** : sign up form
+- **/** : welcome page
+- **/signup** : sign up form
   - POST new user to the db
   - redirects to /authenticated once successfully signed up
   - sets a cookie with the authenticated user's information which expires in 1 day
-- **localhost:3000/login** : log in form
+- **/login** : log in form
   - utilizes Basic Authentication for loging in
   - redirects to /authenticated when successfully logged in
   - sets a cookie with the authenticated user's information which expires in 1 day
-- **localhost:3000/logout** : loggs out the current user
+- **/logout** : loggs out the current user
   - redirects to localhost:3000/
   - deletes the user's cookie
-- **localhost:3000/authenticated** : PrivateRoute and default message when successfully logged in
+- **/authenticated** : PrivateRoute and default message when successfully logged in
   - redirects to /login if un-authenticated user tries to access route.
-- **localhost:3000/profile** : additional PrivateRoute displaying the user's information
+- **/profile** : additional PrivateRoute displaying the user's information
   - redirects to /login if un-authenticated user attempts to access route. Once successfully logged in, the user will be redirected back to /profile as it was the originally intended route to visit
