@@ -13,6 +13,7 @@ const Header = ()=>{
             authUser
             ? <React.Fragment>
                 <span>Welcome, {authUser.name}!</span>
+                <Link className='signin' to="/profile">Profile</Link>
                 <Link className="signout" to="/logout">Log Out</Link>
               </React.Fragment>
             : <React.Fragment>
