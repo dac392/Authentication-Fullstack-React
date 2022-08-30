@@ -73,4 +73,22 @@ The app's available routes accessed using **_localhost:3000_** :-
 - **/authenticated** : PrivateRoute and default message when successfully logged in
   - redirects to /login if un-authenticated user tries to access route.
 - **/profile** : additional PrivateRoute displaying the user's information
+
   - redirects to /login if un-authenticated user attempts to access route. Once successfully logged in, the user will be redirected back to /profile as it was the originally intended route to visit
+
+## Future Additions
+
+This is one of the coolest projects I've worked on so far and I think it would be really fun to slowly update it into something usable. Some features which I would like to add to the application in the near future are:
+
+- [ ] Header main title home link
+- [ ] Welcome page main content
+- [ ] Authenticated page main content
+- [ ] Authenticated user Home page
+- [ ] Profile page allow for editable content
+- [ ] Allow profile deletion
+- [ ] PUT route for api
+- [ ] DELETE route for api
+- [ ] Add private routes for users
+- [ ] Redirect / , /signup, /login to Authenticated user Home page
+- [ ] Add functionality to the app other than storing and retrieving user information
+- [ ] Add more impresive styling
